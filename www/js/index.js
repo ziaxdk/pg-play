@@ -34,10 +34,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        if (navigator) alert('navigator');
-        if (window.navigator) alert('window.navigator');
-        if (navigator.geolocation) alert('navigator.geolocation');
-        if (window.navigator.geolocation) alert('window.navigator.geolocation');
         navigator.geolocation.getCurrentPosition(
             function(position) {
                 alert('Latitude: '          + position.coords.latitude          + '\n' +
@@ -54,6 +50,17 @@ var app = {
                       'message: ' + error.message + '\n');
             },
             { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
+
+        alert(datePicker);
+        var options = {
+          date: new Date(),
+          mode: 'date'
+        };
+
+        datePicker.show(options, function(date){
+          alert("date result " + date);  
+        });
+
     },
 
 
