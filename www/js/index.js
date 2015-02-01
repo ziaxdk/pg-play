@@ -38,24 +38,25 @@ var app = {
         if (window.navigator) alert('window.navigator');
         if (navigator.geolocation) alert('navigator.geolocation');
         if (window.navigator.geolocation) alert('window.navigator.geolocation');
-        navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                alert('Latitude: '          + position.coords.latitude          + '\n' +
+                      'Longitude: '         + position.coords.longitude         + '\n' +
+                      'Altitude: '          + position.coords.altitude          + '\n' +
+                      'Accuracy: '          + position.coords.accuracy          + '\n' +
+                      'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+                      'Heading: '           + position.coords.heading           + '\n' +
+                      'Speed: '             + position.coords.speed             + '\n' +
+                      'Timestamp: '         + position.timestamp                + '\n');
+                },
+            function(error) {
+                alert('code: '    + error.code    + '\n' +
+                      'message: ' + error.message + '\n');
+            },
+            { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
     },
 
-    onGeoSuccess: function(position) {
-        alert('Latitude: '          + position.coords.latitude          + '\n' +
-              'Longitude: '         + position.coords.longitude         + '\n' +
-              'Altitude: '          + position.coords.altitude          + '\n' +
-              'Accuracy: '          + position.coords.accuracy          + '\n' +
-              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-              'Heading: '           + position.coords.heading           + '\n' +
-              'Speed: '             + position.coords.speed             + '\n' +
-              'Timestamp: '         + position.timestamp                + '\n');
-    },
 
-    onGeoError: function() {
-        alert('code: '    + error.code    + '\n' +
-              'message: ' + error.message + '\n');
-    },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
