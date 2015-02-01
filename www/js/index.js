@@ -34,7 +34,11 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
+        if (navigator) alert('navigator');
+        if (window.navigator) alert('window.navigator');
+        if (navigator.geolocation) alert('navigator.geolocation');
+        if (window.navigator.geolocation) alert('window.navigator.geolocation');
+        // navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
     },
 
     onGeoSuccess: function(position) {
