@@ -32,13 +32,9 @@ angular.module('starter', ['ionic', 'ngCordova'])
     // useful especially with forms, though we would prefer giving the user a little more room
     // to interact with the app.
     
-    alert(window.cordova);
-    alert(window.cordova.plugins);
-    alert(window.cordova.plugins.Keyboard);
-
-//    if(window.cordova && window.cordova.plugins.Keyboard) {
-  //    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    //}
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
 
     if(window.StatusBar) {
       // Set the statusbar to use the default style, tweak this to
