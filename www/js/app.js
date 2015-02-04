@@ -7,6 +7,8 @@ angular.module('starter', ['ionic', 'ngCordova'])
 
 .run(function($ionicPlatform, $cordovaGeolocation) {
   $ionicPlatform.ready(function() {
+    alert($cordovaGeolocation);
+    alert($cordovaGeolocation.watchPosition);
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs).
     // The reason we default this to hidden is that native apps don't usually show an accessory bar, at 
@@ -29,8 +31,6 @@ angular.module('starter', ['ionic', 'ngCordova'])
       enableHighAccuracy: false // may cause errors if true
     };
 
-    alert($cordovaGeolocation);
-    alert($cordovaGeolocation.watchPosition);
     var watch = $cordovaGeolocation.watchPosition(watchOptions);
     watch.then(
       null,
