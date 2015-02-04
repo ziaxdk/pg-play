@@ -33,10 +33,11 @@ angular.module('starter', ['ionic', 'ngCordova'])
     // to interact with the app.
     
     alert(window.cordova);
+    alert(window.cordova.plugins);
 
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
+//    if(window.cordova && window.cordova.plugins.Keyboard) {
+  //    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    //}
 
     alert(window.StatusBar);
 
