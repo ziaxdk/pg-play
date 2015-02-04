@@ -33,11 +33,11 @@ angular.module('starter', ['ionic', 'ngCordova'])
     // useful especially with forms, though we would prefer giving the user a little more room
     // to interact with the app.
     $cordovaKeyboard.hideAccessoryBar(true);
-//    $cordovaStatusbar.style(1);
-//    $cordovaStatusbar.overlaysWebView(true);
-//    $cordovaStatusbar.styleHex('#000');
-    for(var i in window.StatusBar) {
-      alert(i);
-    }
+    $cordovaStatusbar.style(1);
+    $cordovaStatusbar.overlaysWebView(true);
+
+//    for(var i in window.StatusBar) {
+//      alert(i);
+//    }
   });
 });
