@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic', 'ngCordova'])
 
-.run(function($ionicPlatform, $cordovaGeolocation, $cordovaStatusbar) {
+.run(function($ionicPlatform, $cordovaGeolocation, $cordovaKeyboard, $cordovaStatusbar) {
   $ionicPlatform.ready(function() {
     var watchOptions = {
       frequency : 1000,
@@ -32,17 +32,8 @@ angular.module('starter', ['ionic', 'ngCordova'])
     // least on iOS. It's a dead giveaway that an app is using a Web View. However, it's sometimes
     // useful especially with forms, though we would prefer giving the user a little more room
     // to interact with the app.
-    
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-
-    alert($cordovaStatusbar);
+    $cordovaKeyboard.hideAccessoryBar(true);
     $cordovaStatusbar.overlaysWebView(true);
-//    if(window.StatusBar) {
-      // Set the statusbar to use the default style, tweak this to
-      // remove the status bar on iOS or change it to use white instead of dark colors.
-  //    StatusBar.styleDefault();
-    //}
+    $cordovaStatusbar.style(1);
   });
 });
