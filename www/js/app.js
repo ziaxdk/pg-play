@@ -34,7 +34,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
     // to interact with the app.
     $cordovaKeyboard.hideAccessoryBar(true);
     $cordovaStatusbar.overlaysWebView(true);
-    alert($cordovaStatusbar.styleBlackTranslucent);
-    $cordovaStatusbar.styleBlackTranslucent();
+    alert($cordovaStatusbar.styleDefault);
+    $cordovaStatusbar.styleDefault();
   });
 });
