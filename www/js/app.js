@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic', 'ngCordova'])
 
-.run(function($ionicPlatform, $cordovaGeolocation, $cordovaDevice) {
+.run(function($ionicPlatform, $cordovaGeolocation, $cordovaStatusbar) {
   $ionicPlatform.ready(function() {
     var watchOptions = {
       frequency : 1000,
@@ -26,17 +26,6 @@ angular.module('starter', ['ionic', 'ngCordova'])
     });
 
 
-alert($cordovaDevice.getDevice());
-alert($cordovaDevice.getCordova());
-alert($cordovaDevice.getModel());
-alert($cordovaDevice.getPlatform());
-alert($cordovaDevice.getUUID());
-alert($cordovaDevice.getVersion());
-
-
-
-
-
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs).
     // The reason we default this to hidden is that native apps don't usually show an accessory bar, at 
@@ -48,10 +37,12 @@ alert($cordovaDevice.getVersion());
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
 
-    if(window.StatusBar) {
+    alert($cordovaStatusbar);
+    $cordovaStatusbar.overlaysWebView(true);
+//    if(window.StatusBar) {
       // Set the statusbar to use the default style, tweak this to
       // remove the status bar on iOS or change it to use white instead of dark colors.
-      StatusBar.styleDefault();
-    }
+  //    StatusBar.styleDefault();
+    //}
   });
 });
