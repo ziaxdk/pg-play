@@ -43,6 +43,6 @@ angular.module('starter', ['ionic', 'ngCordova'])
 
 
 
-
+    alert('end');
   });
 });
