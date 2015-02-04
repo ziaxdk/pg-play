@@ -36,7 +36,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
 //    $cordovaStatusbar.style(1);
 //    $cordovaStatusbar.overlaysWebView(true);
 //    $cordovaStatusbar.styleHex('#000');
-    for(var i in window.statusBar) {
+    for(var i in window.StatusBar) {
       alert(i);
     }
   });
