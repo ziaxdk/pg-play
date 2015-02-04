@@ -29,17 +29,19 @@ angular.module('starter', ['ionic', 'ngCordova'])
       enableHighAccuracy: false // may cause errors if true
     };
 
+    alert($cordovaGeolocation);
+    alert($cordovaGeolocation.watchPosition);
     var watch = $cordovaGeolocation.watchPosition(watchOptions);
-      watch.then(
-        null,
-        function(err) {
-          // error
-        },
-        function(position) {
-          var lat  = position.coords.latitude
-          var long = position.coords.longitude
-          alert (lat + ', ' + long);
-      });
+    watch.then(
+      null,
+      function(err) {
+        // error
+      },
+      function(position) {
+        var lat  = position.coords.latitude;
+        var long = position.coords.longitude;
+        alert (lat + ', ' + long);
+    });
 
 
 
