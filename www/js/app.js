@@ -34,22 +34,16 @@ angular.module('starter', ['ionic', 'ngCordova'])
     
     alert(window.cordova);
     alert(window.cordova.plugins);
+    alert(window.cordova.plugins.Keyboard);
 
 //    if(window.cordova && window.cordova.plugins.Keyboard) {
   //    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     //}
-
-    alert(window.StatusBar);
 
     if(window.StatusBar) {
       // Set the statusbar to use the default style, tweak this to
       // remove the status bar on iOS or change it to use white instead of dark colors.
       StatusBar.styleDefault();
     }
-
-
-
-
-    alert('end');
   });
 });
