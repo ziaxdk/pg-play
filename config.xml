@@ -34,7 +34,6 @@
     <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.file" />
     <gap:plugin name="org.apache.cordova.file-transfer" />
-    <!-- <gap:plugin name="org.apache.cordova.geolocation" /> -->
     <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.globalization" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
@@ -71,7 +70,7 @@
     <gap:splash gap:platform="ios" height="768" src="www/res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*" />
-    <feature name="StatusBar">
+<!--<feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true" />
-    </feature>
+    </feature>-->
 </widget>

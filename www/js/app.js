@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic', 'ngCordova'])
 
-.run(function($ionicPlatform, $cordovaGeolocation) {
+.run(function($ionicPlatform, $cordovaGeolocation, $cordovaDevice) {
   $ionicPlatform.ready(function() {
     var watchOptions = {
       frequency : 1000,
@@ -24,6 +24,18 @@ angular.module('starter', ['ionic', 'ngCordova'])
   //      var long = position.coords.longitude;
     //    alert (lat + ', ' + long);
     });
+
+
+alert($cordovaDevice.getDevice());
+alert($cordovaDevice.getCordova());
+alert($cordovaDevice.getModel());
+alert($cordovaDevice.getPlatform());
+alert($cordovaDevice.getUUID());
+alert($cordovaDevice.getVersion());
+
+
+
+
 
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs).
